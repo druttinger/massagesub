@@ -2,6 +2,7 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { LoginScreen } from '../screens/LoginScreen';
 import { RegisterScreen } from '../screens/RegisterScreen';
@@ -54,6 +55,8 @@ function AuthNavigator() {
 }
 
 function MainTabNavigator() {
+  const insets = useSafeAreaInsets();
+  
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -85,8 +88,10 @@ function MainTabNavigator() {
           backgroundColor: colors.background.card,
           borderTopColor: colors.border.light,
           paddingTop: 8,
-          paddingBottom: 8,
-          height: 60,
+          // Adaptive padding: use safe area insets for devices with gesture navigation
+          // or a minimum padding for devices with hardware buttons
+          paddingBottom: Math.max(insets.bottom, 8),
+          height: 60 + Math.max(insets.bottom, 8),
         },
         tabBarLabelStyle: {
           fontSize: typography.fontSize.xs,

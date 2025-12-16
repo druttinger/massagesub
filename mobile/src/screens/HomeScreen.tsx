@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Card, Button } from '../components/ui';
 import { colors, typography, spacing, borderRadius } from '../theme';
 import { useAuthStore } from '../stores/authStore';
@@ -63,10 +64,12 @@ export function HomeScreen() {
     return 'Good evening';
   };
 
+  const insets = useSafeAreaInsets();
+
   return (
     <ScrollView
       style={styles.container}
-      contentContainerStyle={styles.content}
+      contentContainerStyle={[styles.content, { paddingTop: insets.top + spacing.lg }]}
       refreshControl={
         <RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor={colors.primary.main} />
       }
@@ -77,11 +80,10 @@ export function HomeScreen() {
           <Text style={styles.greeting}>{getGreeting()},</Text>
           <Text style={styles.userName}>{user?.firstName || 'Guest'}</Text>
         </View>
-        <Image
-          source={{ uri: 'https://goldenayurvedamassage.com/uploads/1/4/2/5/142500427/published/f4a90630-f8fb-44ab-a5c3-c1f3df8ea1ad.png' }}
-          style={styles.logo}
-          resizeMode="contain"
-        />
+        <View style={styles.logoContainer}>
+          <Ionicons name="partly-sunny" size={28} color={colors.primary.main} />
+          <Ionicons name="triangle" size={18} color={colors.secondary.main} style={styles.mountainIcon} />
+        </View>
       </View>
 
       {/* Subscription Status Card */}
@@ -267,9 +269,16 @@ const styles = StyleSheet.create({
     fontWeight: typography.fontWeight.bold,
     color: colors.text.primary,
   },
-  logo: {
+  logoContainer: {
     width: 50,
     height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'relative',
+  },
+  mountainIcon: {
+    position: 'absolute',
+    bottom: 2,
   },
   subscriptionCard: {
     marginBottom: spacing.lg,

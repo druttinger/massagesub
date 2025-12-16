@@ -4,12 +4,12 @@ import {
   Text,
   StyleSheet,
   ScrollView,
-  Image,
   KeyboardAvoidingView,
   Platform,
   Alert,
 } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { Ionicons } from '@expo/vector-icons';
 import { Button, TextInput } from '../components/ui';
 import { colors, typography, spacing } from '../theme';
 import { useAuthStore } from '../stores/authStore';
@@ -80,11 +80,10 @@ export function LoginScreen({ navigation }: Props) {
       >
         {/* Logo and Header */}
         <View style={styles.header}>
-          <Image
-            source={{ uri: 'https://goldenayurvedamassage.com/uploads/1/4/2/5/142500427/published/f4a90630-f8fb-44ab-a5c3-c1f3df8ea1ad.png' }}
-            style={styles.logo}
-            resizeMode="contain"
-          />
+          <View style={styles.logoContainer}>
+            <Ionicons name="partly-sunny" size={60} color={colors.primary.main} />
+            <Ionicons name="triangle" size={40} color={colors.secondary.main} style={styles.mountainIcon} />
+          </View>
           <Text style={styles.title}>Blue Sky Mountain</Text>
           <Text style={styles.subtitle}>Massage & Wellness</Text>
           <Text style={styles.tagline}>
@@ -164,10 +163,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: spacing.xl,
   },
-  logo: {
+  logoContainer: {
     width: 120,
-    height: 120,
+    height: 100,
     marginBottom: spacing.md,
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'relative',
+  },
+  mountainIcon: {
+    position: 'absolute',
+    bottom: 0,
   },
   title: {
     fontSize: typography.fontSize['3xl'],

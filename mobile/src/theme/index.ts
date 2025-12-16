@@ -1,64 +1,64 @@
-// Theme colors matching Golden Ayurveda & Massage branding
-// Inspired by https://goldenayurvedamassage.com/
+// Theme colors for Blue Sky Mountain Massage
+// Light and dark blue tones inspired by mountain skies
 
 export const colors = {
-  // Primary - Golden/Amber tones
+  // Primary - Sky Blue tones
   primary: {
-    main: '#C9A86C',      // Warm gold
-    light: '#E5D4B3',     // Light gold/cream
-    dark: '#9E7E3E',      // Deep gold
+    main: '#4A90B8',      // Sky blue
+    light: '#87CEEB',     // Light sky blue
+    dark: '#2C5F7C',      // Deep mountain blue
     contrast: '#FFFFFF',
   },
   
-  // Secondary - Earth tones
+  // Secondary - Mountain/Nature tones
   secondary: {
-    main: '#5C4033',      // Brown
-    light: '#8B6F47',     // Light brown
-    dark: '#3D2B22',      // Dark brown
+    main: '#1E3A5F',      // Dark navy blue
+    light: '#3D5A80',     // Soft navy
+    dark: '#0D1B2A',      // Deep night sky
     contrast: '#FFFFFF',
   },
   
-  // Accent - Sage/Wellness greens
+  // Accent - Natural earth/forest greens
   accent: {
-    main: '#7D8B6A',      // Sage green
-    light: '#A8B496',     // Light sage
-    dark: '#5A6349',      // Dark sage
+    main: '#6B8E7D',      // Mountain sage
+    light: '#8FB3A4',     // Light sage
+    dark: '#4A6B5A',      // Forest green
   },
   
   // Background colors
   background: {
-    primary: '#FBF9F5',   // Warm off-white
-    secondary: '#F5F0E6', // Cream
+    primary: '#F5F9FC',   // Very light blue-white
+    secondary: '#E8F1F8', // Light blue tint
     card: '#FFFFFF',
-    dark: '#2C2420',      // Dark background
+    dark: '#1A2634',      // Dark blue-gray
   },
   
   // Text colors
   text: {
-    primary: '#2C2420',   // Almost black, warm
-    secondary: '#6B5E54', // Brown-gray
-    muted: '#9A8F85',     // Light brown-gray
+    primary: '#1A2634',   // Dark blue-gray
+    secondary: '#4A6079', // Blue-gray
+    muted: '#8899A8',     // Light blue-gray
     light: '#FFFFFF',
-    accent: '#C9A86C',    // Gold text
+    accent: '#4A90B8',    // Sky blue text
   },
   
   // Status colors
   status: {
-    success: '#7D8B6A',   // Sage green
-    warning: '#D4A84B',   // Amber
-    error: '#B85450',     // Muted red
-    info: '#6B8FAD',      // Muted blue
+    success: '#6B8E7D',   // Mountain sage
+    warning: '#E6A23C',   // Warm amber
+    error: '#C75450',     // Soft red
+    info: '#4A90B8',      // Sky blue
   },
   
   // UI elements
   border: {
-    light: '#E8E2D9',
-    main: '#D4CBC0',
-    dark: '#B5A999',
+    light: '#D8E5EF',
+    main: '#B8CFDF',
+    dark: '#8AACBF',
   },
   
   // Overlay
-  overlay: 'rgba(44, 36, 32, 0.5)',
+  overlay: 'rgba(26, 38, 52, 0.5)',
 };
 
 export const typography = {
