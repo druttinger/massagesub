@@ -195,52 +195,6 @@ export function HomeScreen() {
           </Card>
         )}
       </View>
-
-      {/* Quick Actions */}
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Quick Actions</Text>
-        <View style={styles.quickActions}>
-          <TouchableOpacity 
-            style={styles.quickAction}
-            onPress={() => navigation.navigate('Appointments')}
-          >
-            <View style={styles.quickActionIcon}>
-              <Ionicons name="calendar" size={24} color={colors.primary.main} />
-            </View>
-            <Text style={styles.quickActionText}>Book</Text>
-          </TouchableOpacity>
-          
-          <TouchableOpacity 
-            style={styles.quickAction}
-            onPress={() => navigation.navigate('Content')}
-          >
-            <View style={styles.quickActionIcon}>
-              <Ionicons name="play-circle" size={24} color={colors.primary.main} />
-            </View>
-            <Text style={styles.quickActionText}>Videos</Text>
-          </TouchableOpacity>
-          
-          <TouchableOpacity 
-            style={styles.quickAction}
-            onPress={() => navigation.navigate('Subscription')}
-          >
-            <View style={styles.quickActionIcon}>
-              <Ionicons name="card" size={24} color={colors.primary.main} />
-            </View>
-            <Text style={styles.quickActionText}>Plans</Text>
-          </TouchableOpacity>
-          
-          <TouchableOpacity 
-            style={styles.quickAction}
-            onPress={() => navigation.navigate('Profile')}
-          >
-            <View style={styles.quickActionIcon}>
-              <Ionicons name="person" size={24} color={colors.primary.main} />
-            </View>
-            <Text style={styles.quickActionText}>Profile</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
     </ScrollView>
   );
 }
@@ -437,27 +391,5 @@ const styles = StyleSheet.create({
   },
   emptyText: {
     color: colors.text.muted,
-  },
-  quickActions: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  quickAction: {
-    alignItems: 'center',
-    flex: 1,
-  },
-  quickActionIcon: {
-    width: 56,
-    height: 56,
-    borderRadius: borderRadius.xl,
-    backgroundColor: colors.primary.light,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: spacing.sm,
-  },
-  quickActionText: {
-    fontSize: typography.fontSize.sm,
-    color: colors.text.secondary,
-    fontWeight: typography.fontWeight.medium,
   },
 });
