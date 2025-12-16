@@ -80,10 +80,11 @@ export function HomeScreen() {
           <Text style={styles.greeting}>{getGreeting()},</Text>
           <Text style={styles.userName}>{user?.firstName || 'Guest'}</Text>
         </View>
-        <View style={styles.logoContainer}>
-          <Ionicons name="partly-sunny" size={28} color={colors.primary.main} />
-          <Ionicons name="triangle" size={18} color={colors.secondary.main} style={styles.mountainIcon} />
-        </View>
+        <Image
+          source={require('../../assets/logo.png')}
+          style={styles.logo}
+          resizeMode="contain"
+        />
       </View>
 
       {/* Subscription Status Card */}
@@ -269,16 +270,9 @@ const styles = StyleSheet.create({
     fontWeight: typography.fontWeight.bold,
     color: colors.text.primary,
   },
-  logoContainer: {
-    width: 50,
-    height: 50,
-    justifyContent: 'center',
-    alignItems: 'center',
-    position: 'relative',
-  },
-  mountainIcon: {
-    position: 'absolute',
-    bottom: 2,
+  logo: {
+    width: 70,
+    height: 70,
   },
   subscriptionCard: {
     marginBottom: spacing.lg,

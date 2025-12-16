@@ -4,12 +4,12 @@ import {
   Text,
   StyleSheet,
   ScrollView,
+  Image,
   KeyboardAvoidingView,
   Platform,
   Alert,
 } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { Ionicons } from '@expo/vector-icons';
 import { Button, TextInput } from '../components/ui';
 import { colors, typography, spacing } from '../theme';
 import { useAuthStore } from '../stores/authStore';
@@ -80,10 +80,11 @@ export function LoginScreen({ navigation }: Props) {
       >
         {/* Logo and Header */}
         <View style={styles.header}>
-          <View style={styles.logoContainer}>
-            <Ionicons name="partly-sunny" size={60} color={colors.primary.main} />
-            <Ionicons name="triangle" size={40} color={colors.secondary.main} style={styles.mountainIcon} />
-          </View>
+          <Image
+            source={require('../../assets/logo.png')}
+            style={styles.logo}
+            resizeMode="contain"
+          />
           <Text style={styles.title}>Blue Sky Mountain</Text>
           <Text style={styles.subtitle}>Massage & Wellness</Text>
           <Text style={styles.tagline}>
@@ -163,17 +164,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: spacing.xl,
   },
-  logoContainer: {
+  logo: {
     width: 120,
-    height: 100,
+    height: 120,
     marginBottom: spacing.md,
-    justifyContent: 'center',
-    alignItems: 'center',
-    position: 'relative',
-  },
-  mountainIcon: {
-    position: 'absolute',
-    bottom: 0,
   },
   title: {
     fontSize: typography.fontSize['3xl'],
